@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
-import {changeNameAction} from '../actions/action';
 import LoginForm from '../components/LoginForm';
+import { connect } from 'react-redux';
 
-export default class Login extends Component {
-    componentDidMount(){
-        dispatch(changeNameAction('Matija'))
-    }
+class Login extends Component {
+    
     render(){
         return(
-            <LoginForm dispatch={this.props.dispatch}/>
+            <LoginForm dispatch= {this.props.dispatch}/>
         )
     }
 }
+
+export default connect()(Login)
